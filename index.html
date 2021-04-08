@@ -10,7 +10,9 @@
     </head>
     <body>
 
-        <div class="card shadow w-50 mt-5 mx-auto p-3">
+        <div>
+            
+        <div class="card shadow mt-5 mx-auto p-3">
             <h1>CRUD System</h1>
 
             <label for="ProductName">Product name</label>
@@ -39,12 +41,12 @@
             </div>
 
             <button id="addProductBtn" onclick="getFormData();"
-                class="d-block btn btn-dark mb-5 py-2 mt-5 w-25">Add
+                class="d-block btn btn-dark mb-5 py-2 mt-5 form-btn">Add
                 product</button>
 
             <button id="updateProductBtn" onclick="updateProduct();"
                 type="submit"
-                class="d-none btn btn-info mb-5 py-2 mt-5 w-25">update
+                class="d-none btn btn-info mb-5 py-2 mt-5 form-btn">update
                 product</button>
         </div>
 
@@ -56,36 +58,40 @@
 
         <div id="dataContainer" class="d-block">
             <div class="container my-5">
-                <div class="w-25 m-auto search-field">
+                <div class="search-field">
                     <input class="form-control" type="search"
                         placeholder="search..." id="productsSearch"
                         oninput="searchInProducts()">
 
                 </div>
 
+                <div class="table-container">
+                    
                 <table id="productTable" class="table text-center table-hover
-                    my-5">
-                    <thead>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Category</th>
-                        <th>Price</th>
-                        <th>description</th>
-                        <th>delete</th>
-                        <th>upadte</th>
-                    </thead>
-                    <tbody id="productTableBody">
+                my-5">
+                <thead>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>description</th>
+                    <th>delete</th>
+                    <th>upadte</th>
+                </thead>
+                <tbody id="productTableBody">
 
-                    </tbody>
+                </tbody>
 
 
-                </table>
+            </table>
+                </div>
 
                 <p class="text-center font-weight-bolder my-5 d-none"
                     id="noProductMessage">There is no product</p>
             </div>
         </div>
 
+        </div>
 
         
         <script src="js/app.js"></script>
