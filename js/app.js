@@ -32,17 +32,29 @@ var product = {};
 //updated row position
 var updatedRow;
 
+//no products in table
+var noProducts = document.getElementById('noProducts');
 
 
 var getListFromJson = JSON.parse(localStorage.getItem("dataList"));
 
 if (getListFromJson != null) {
     listOfProducts = getListFromJson;
+    showNoProductMessage(false);
     hideSearchTable(false);
     displayProduct();
 } else {
     listOfProducts = [];
+    showNoProductMessage(true)
     hideSearchTable(true);
+}
+
+function showNoProductMessage(state) {
+    if (state)
+        noProducts.classList.replace('d-none', 'd-block');
+    else
+        noProducts.classList.replace('d-block', 'd-none');
+
 }
 
 function hideSearchTable(state) {
@@ -100,10 +112,14 @@ function clearIputs() {
 
 function displayProduct() {
 
-    if (listOfProducts.length == 0)
+    if (listOfProducts.length == 0) {
+        showNoProductMessage(true);
         hideSearchTable(true);
-    else
+    }
+    else {
+        showNoProductMessage(false);
         hideSearchTable(false)
+    }
 
 
     var tableRow = ``
@@ -130,7 +146,11 @@ function displayProduct() {
 function deleteProdect(index) {
     listOfProducts.splice(index, 1)
 
-    localStorage.setItem("dataList", JSON.stringify(listOfProducts));
+    if(listOfProducts.length != 0){
+        localStorage.setItem("dataList", JSON.stringify(listOfProducts));
+    }else{
+        localStorage.removeItem("dataList");
+    }
 
     displayProduct();
 }
