@@ -47,9 +47,9 @@ if (getListFromJson != null) {
 
 function hideSearchTable(state) {
     if (state)
-        dataContainer.classList.replace('d-block', 'd-none');
-    else
         dataContainer.classList.replace('d-none', 'd-block');
+    else
+        dataContainer.classList.replace('d-block', 'd-none');
 
 }
 
