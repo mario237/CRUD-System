@@ -38,18 +38,18 @@ var getListFromJson = JSON.parse(localStorage.getItem("dataList"));
 
 if (getListFromJson != null) {
     listOfProducts = getListFromJson;
-    hideSearchTable(true);
+    hideSearchTable(false);
     displayProduct();
 } else {
     listOfProducts = [];
-    hideSearchTable(false);
+    hideSearchTable(true);
 }
 
 function hideSearchTable(state) {
     if (state)
-        dataContainer.classList.replace('d-none', 'd-block');
-    else
         dataContainer.classList.replace('d-block', 'd-none');
+    else
+        dataContainer.classList.replace('d-none', 'd-block');
 
 }
 
