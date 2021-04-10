@@ -19,8 +19,10 @@ label{
 }
 
 
-span{
+mark{
     background-color: rgba(251, 251, 0.6);
+    padding: 0;
+    margin: 0;
 }
 
 .alert

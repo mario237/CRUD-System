@@ -229,6 +229,13 @@ function searchInProducts() {
 
     } else {
         productTableBody.innerHTML = searchedRow;
+        $("#productTableBody").unmark().mark(searchedProduct,
+            {
+                "acrossElements": true,
+                "separateWordSearch": false,
+            }
+        );
+        
         productTable.style.display = ''
         noProductMessage.classList.replace('d-block', 'd-none');
     }
